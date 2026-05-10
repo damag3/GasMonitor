@@ -31,3 +31,62 @@ Includes:
 
 ## 📦 Project Structure
 
+gasmonitor/
+├── gas_monitor.py
+├── dashboard.html
+├── README.md
+└── gasenv/ (ignored)
+
+
+---
+
+## 🔧 Hardware Wiring
+
+### Sensors
+- MQ‑2 → ADS1115 A0  
+- TGS2610 → ADS1115 A1  
+- ADS1115 → I2C (SCL/SDA)
+
+### Buzzer
+- GPIO 27 → buzzer +  
+- GND → buzzer –
+
+### Button
+- GPIO 26 → button  
+- GND → button  
+*(internal pull‑up enabled)*
+
+### LEDs
+- Green → GPIO 5  
+- Yellow → GPIO 6  
+- Red → GPIO 13  
+- Each with 220 Ω resistor
+
+### Fan (40×40)
+- 5V → fan +  
+- GND → fan –  
+- Optional: 470 µF capacitor across 5V/GND
+
+---
+
+## 🧪 Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USER/gasmonitor.git
+cd gasmonitor
+
+python3 -m venv gasenv
+source gasenv/bin/activate
+
+pip install flask adafruit-circuitpython-ads1x15
+
+source gasenv/bin/activate
+python3 gas_monitor.py
+
+
+http://<PI_IP>:8080
+
+
+
