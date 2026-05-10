@@ -87,6 +87,7 @@ python3 gas_monitor.py
 
 
 http://<PI_IP>:8080
+```
 
 🖥️ MagicMirror² Integration
 This project integrates with the MagicMirror module:
